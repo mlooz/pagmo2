@@ -42,7 +42,6 @@ see https://www.gnu.org/licenses/. */
 #include <pagmo/detail/visibility.hpp>
 #include <pagmo/population.hpp>
 #include <pagmo/rng.hpp>
-#include <pagmo/algorithms/ts.hpp>
 
 namespace pagmo
 {

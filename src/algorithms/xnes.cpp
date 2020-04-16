@@ -219,10 +219,13 @@ population xnes::evolve(population pop) const
             pop.get_problem().set_seed(std::uniform_int_distribution<unsigned>()(m_e));
         }
         // 1 - We generate lam new individuals using the current probability distribution
+
+        std::vector<std::vector<double>> ts_candidates = generate_tail_scented(dim, lam, m_e);
+
         for (decltype(lam) i = 0u; i < lam; ++i) {
             // 1a - we create a randomly normal distributed vector
             for (decltype(dim) j = 0u; j < dim; ++j) {
-                z[i](_(j)) = normally_distributed_number(m_e);
+                z[i](_(j)) = ts_candidates[i][j];
             }
             // 1b - and store its transformed value in the new chromosomes
             x[i] = mean + A * z[i];

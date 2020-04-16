@@ -78,7 +78,7 @@ std::vector<double> transform_gaussian(std::vector<double> gaussian,
 }
 
 std::vector<std::vector<double>> generate_tail_scented(int dim, int num_total,
-                                                       detail::random_engine_type && g,
+                                                       detail::random_engine_type & g,
                                                        double ratio_tail = 0.3,
                                                        bool verbose = false) {
   std::vector<std::vector<double>> result;
